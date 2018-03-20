@@ -1,0 +1,29 @@
+.main{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  justify-content: center;
+  align-items: center;
+  background: teal;
+  color: aliceblue;
+  border: 2px solid black;
+}
+.new-york{
+  background-color: blanchedalmond;
+  cursor: pointer;
+  border: 1px solid black;
+  color: black;
+  padding: 3px;
+}
+.new-york:hover{
+  filter: invert(100%);
+}
+body{
+  background-image: url('./assets/clouds.jpg');
+  background-size: cover;
+}
+
+ul{
+  list-style-type: none;
+}
