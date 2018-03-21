@@ -12,13 +12,14 @@
         $l('.new-york').on('click', () => $l.ajax({
           method: "GET",
           url:  "http://api.openweathermap.org/data/2.5/weather",
-          data: { appid: "6593357a84983f34982acc13f791e08d", q: "new%20york,US" },
+          data: { appid: "d79704c3afb3e9a79778c80a769e671b", q: "new%20york,US" },
           success(data) {
             const weather = JSON.parse(data)
-            // $l('.new-york-weather').append(`<h2>${weather.weather[0].description}</h2>`)
             $l('.data').append(`<li>Forecast: ${weather.weather[0].description}</li>`)
             $l('.data').append(`<li>Humidity: ${weather.main.humidity}</li>`)
-            $l('.data').append(`<li>Temperature: ${(weather.main.temp - 273.15) * 1.8 + 32} degrees</li>`)
+            $l('.data').append(`<li>Temperature: ${((weather.main.temp - 273.15) * 1.8 + 32).toFixed(1)} degrees</li>`)
+            $l('.data').addClass('weather-box')
+            $l('.new-york').off('click')
           }
         }));
 
@@ -28,10 +29,8 @@
     <div class="main">
       <h1>DOMpler Weather Radar</h1>
       <div class='new-york'>Get New York Weather</div>
-      <div class='new-york-weather'>
-        <ul class='data'>
-        </ul>
-      </div>
+      <ul class='data'>
+      </ul>
     </div>
   </body>
 </html>

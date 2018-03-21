@@ -15,9 +15,20 @@
   border: 1px solid black;
   color: black;
   padding: 3px;
+  width: 40%;
+  text-align: center;
 }
 .new-york:hover{
   filter: invert(100%);
+}
+
+.weather-box{
+  background-color: blanchedalmond;
+  border: 1px solid black;
+  color: black;
+  padding: 3px;
+  width: 40%;
+  text-align: center;
 }
 body{
   background-image: url('./assets/clouds.jpg');
