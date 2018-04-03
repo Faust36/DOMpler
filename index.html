@@ -12,7 +12,7 @@
         $l('.new-york').on('click', () => $l.ajax({
           method: "GET",
           url:  "http://api.openweathermap.org/data/2.5/weather",
-          data: { appid: "d79704c3afb3e9a79778c80a769e671b", q: "new%20york,US" },
+          data: { appid: 'f816d7f39052e3a98b21952097a43076', q: "new%20york,US" },
           success(data) {
             const weather = JSON.parse(data)
             $l('.data').append(`<li>Forecast: ${weather.weather[0].description}</li>`)
