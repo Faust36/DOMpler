@@ -2,7 +2,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  width: 33%;
+  width: 50%;
   justify-content: center;
   align-items: center;
   background: teal;
@@ -22,13 +22,13 @@
   filter: invert(100%);
 }
 
-.weather-box{
-  background-color: blanchedalmond;
-  border: 1px solid black;
-  color: black;
-  padding: 3px;
-  width: 40%;
-  text-align: center;
+.data{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.gif{
+  max-width: 500px;
+  max-height: 800px;
 }
 body{
   background-image: url('./assets/clouds.jpg');

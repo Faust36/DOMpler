@@ -11,15 +11,15 @@
       $l(() => {
         $l('.new-york').on('click', () => $l.ajax({
           method: "GET",
-          url:  "http://api.openweathermap.org/data/2.5/weather",
-          data: { appid: 'f816d7f39052e3a98b21952097a43076', q: "new%20york,US" },
-          success(data) {
-            const weather = JSON.parse(data)
-            $l('.data').append(`<li>Forecast: ${weather.weather[0].description}</li>`)
-            $l('.data').append(`<li>Humidity: ${weather.main.humidity}</li>`)
-            $l('.data').append(`<li>Temperature: ${((weather.main.temp - 273.15) * 1.8 + 32).toFixed(1)} degrees</li>`)
-            $l('.data').addClass('weather-box')
-            $l('.new-york').off('click')
+          url: "https://api.giphy.com/v1/gifs/random?api_key=VsARNAv3ay382VjgfESdUHoK0q0rIDgT&tag=weather",
+          api_key: "VsARNAv3ay382VjgfESdUHoK0q0rIDgT",
+          tag: "weather",
+          rating: "g",
+          success(result) {
+            const weather = JSON.parse(result)
+            $l('.data').empty()
+            $l('.data').html('<img src="'+weather.data.images.original.url+'" class="gif">')
+            // $l('.new-york').off('click')
           }
         }));
 
@@ -28,9 +28,11 @@
     </script>
     <div class="main">
       <h1>DOMpler Weather Radar</h1>
-      <div class='new-york'>Get New York Weather</div>
-      <ul class='data'>
-      </ul>
+      <div class='new-york'>Get Weather Gif</div>
+      <div class='data'>
+
+      </div>
     </div>
   </body>
 </html>
+<!-- VsARNAv3ay382VjgfESdUHoK0q0rIDgT -->
